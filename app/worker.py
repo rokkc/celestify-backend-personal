@@ -41,7 +41,7 @@ def process_channel_buffer(self, channel_id):
         time_since_active = time.time() - float(last_active)
         # 280 seconds = ~4.5 minutes. 
         # We use 280 instead of 300 to give a tiny buffer before the next scheduled check.
-        if time_since_active < 280: 
+        if time_since_active < 15: 
             print(f"   -> Channel active {int(time_since_active)}s ago. Skipping.")
             return "Skipped: Too active"
 
