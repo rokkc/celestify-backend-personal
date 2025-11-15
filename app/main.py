@@ -61,7 +61,7 @@ async def slack_events(request: Request):
         # "Try to process this channel in 5 minutes"
         # If the user keeps talking, the worker will see the updated timestamp 
         # and cancel itself.
-        process_channel_buffer.apply_async(args=[channel_id], countdown=300)
+        process_channel_buffer.apply_async(args=[channel_id], countdown=20)
 
     return {"status": "ok"}
 
